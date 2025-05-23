@@ -10,7 +10,7 @@ class ProductPriceHistoryController extends Controller
 {
     public function index()
     {
-        $histories = ProductPriceHistory::with('product')->get();
+        $histories = ProductPriceHistory::with('product')->paginate(10);
         return view('product_price_history.index', compact('histories'));
     }
 

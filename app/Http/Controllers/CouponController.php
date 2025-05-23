@@ -9,7 +9,7 @@ class CouponController extends Controller
 {
     public function index()
     {
-        $coupons = Coupon::all();
+        $coupons = Coupon::paginate(10);
         return view('coupons.index', compact('coupons'));
     }
 
